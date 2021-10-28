@@ -1,0 +1,17 @@
+{% extends 'main/account_base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block body_account %}
+<form method="POST" class="signup_form mr-2 ml-2">
+	{% csrf_token %}
+	<fieldset>
+		{{form|crispy}}
+	</fieldset>
+	<section class="mt-4 mr-1 ml-1">
+		<h4><button type="submit">Log In</button>
+		<small>Don't have an account? &nbsp;<a style="color: #4C787E" href="{% url 'signup' %}"><b>Sign Up</b></a></small><br>
+		<small>Forgotten  <a style="color: #4C787E" href="{% url 'password_reset' %}"><b>Password &nbsp;</b>  </a></small></h4>
+
+	</section>
+</form>
